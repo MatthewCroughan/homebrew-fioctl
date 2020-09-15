@@ -3,20 +3,21 @@ require_relative "custom_download_strategy"
 class Fioctl < Formula
   desc "A simple tool to interact with the Foundries.io REST API for managing a Factory."
   homepage "https://foundries.io"
-  version "0.1.32"
+  version "0.1.33"
   bottle :unneeded
 
   if OS.mac?
-    url "http://github.com/matthewcroughan/fioctl/releases/v0.1.32/fioctl_0.1.32_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy.
-    sha256 "ade3fe8b4e3d8b53a95f0adaf465da12546f9b2997452980608f82f8dec67a8f"
+    url "http://github.com/matthewcroughan/fioctl/releases/v0.1.33/fioctl_0.1.33_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy.
+    sha256 "b2830673310b03b9562c97f55bc0813747ac91e231252d3dc5b1f5d3c9fab83e"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "http://github.com/matthewcroughan/fioctl/releases/v0.1.32/fioctl_0.1.32_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy.
-      sha256 "70afe57079720ff56120bb6f872e84f16fc8112001e4f297629a335e753eee18"
+      url "http://github.com/matthewcroughan/fioctl/releases/v0.1.33/fioctl_0.1.33_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy.
+      sha256 "71c3576745b53ec3d8a98768eafe1444d2a139c557137ae0766670a591f6c914"
     end
   end
   
   depends_on "git"
+  depends_on "go"
   depends_on "zsh" => :optional
 
   def install
@@ -26,5 +27,9 @@ class Fioctl < Formula
   def caveats; <<~EOS
     How to use this binary
   EOS
+  end
+
+  test do
+    system "#{bin}/fioctl -v"
   end
 end
