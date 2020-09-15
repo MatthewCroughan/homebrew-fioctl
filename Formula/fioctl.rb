@@ -2,20 +2,21 @@
 class Fioctl < Formula
   desc "A simple tool to interact with the Foundries.io REST API for managing a Factory."
   homepage "https://foundries.io"
-  version "0.1.38"
+  version "0.1.39"
   bottle :unneeded
 
   if OS.mac?
-    url "http://github.com/matthewcroughan/fioctl/releases/download/v0.1.38/fioctl_0.1.38_Darwin_x86_64.tar.gz"
-    sha256 "ba115e968dc61d6777206ed13918c074694176069e876df5ae9cee9d1d6da1db"
+    url "http://github.com/matthewcroughan/fioctl/releases/download/v0.1.39/fioctl_0.1.39_Darwin_x86_64.tar.gz"
+    sha256 "ea69773a1ee5d57a5419a63eebcb28996dec78c5405bf438848215f68a8c175d"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "http://github.com/matthewcroughan/fioctl/releases/download/v0.1.38/fioctl_0.1.38_Linux_x86_64.tar.gz"
-      sha256 "eb23ad8ce01123c3fad32328360a7866f97f62d32faf13020f2869d85f8234c6"
+      url "http://github.com/matthewcroughan/fioctl/releases/download/v0.1.39/fioctl_0.1.39_Linux_x86_64.tar.gz"
+      sha256 "d020005abca1f2e33b8b475e36c3125484aaffc7a3be069ce08ec84f44a2d92b"
     end
   end
   
   depends_on "git"
+  depends_on "go"
   depends_on "zsh" => :optional
 
   def install
