@@ -5,12 +5,12 @@ class Fioctl < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/foundriesio/fioctl/releases/download/v0.11/fioctl-darwin-amd64"
-    sha256 "28c3d04caec6754d2102eaf36c448683bcbc3b85a10b8d1a6cd4a10b7561bf87"
+    url "https://github.com/foundriesio/homebrew-fioctl/releases/download/v0.11/fioctl_0.11_Darwin_x86_64.tar.gz"
+    sha256 "ec78dc26c5132c52ca6956b6f206d1a0dc10746036e9b7b46b6fdbeef5916593"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/foundriesio/fioctl/releases/download/v0.11/fioctl-linux-amd64"
-      sha256 "5c0e32e475ef63d367d436209c231fcc16e3dbf5cf3e9336a8bb86cc378d39b2"
+      url "https://github.com/foundriesio/homebrew-fioctl/releases/download/v0.11/fioctl_0.11_Linux_x86_64.tar.gz"
+      sha256 "b7902c555afbe6829ed3446f9244624f67f68ffb51241d46db1c376c08b6b3de"
     end
   end
 
